@@ -1,0 +1,12 @@
+# Artefactos de macOS/editor
+.DS_Store
+*.swp
+*~
+
+# Estado local del harness de Claude Code, no es parte del proyecto
+.claude/
+
+# Excel originales con muestras crudas: nunca deben entrar en el repositorio.
+# El único Excel del proyecto es reference/excel_limpio_estructural.xlsx (saneado).
+/excel.xlsx
+/excel_clasificado.xlsx
