@@ -1,29 +1,38 @@
-# Command Lab — generador de comandos administrativos/diagnósticos
+# LOLBin Command Lab
+
+Generador CLI de comandos de administración, diagnóstico y laboratorio en ciberseguridad,
+para Windows y Linux/macOS.
 
 ## Qué es
 
 Un pequeño conjunto de scripts CLI interactivos que generan, ya listos para copiar y
-usar, comandos de administración y diagnóstico habituales en Windows y Linux/macOS
-(instalar un MSI, mapear un recurso SMB, resolver un DNS, comprobar un puerto, calcular
-un hash, etc.), evitando tener que recordar la sintaxis exacta, el quoting o el orden de
-los parámetros de cada herramienta.
+pegar, comandos de administración y diagnóstico habituales (instalar un MSI, mapear un
+recurso SMB, resolver un DNS, comprobar un puerto, calcular un hash, etc.), evitando
+tener que recordar la sintaxis exacta, el quoting o el orden de los parámetros de cada
+herramienta.
 
-Las categorías que organizan el menú están tomadas de una taxonomía de técnicas y
-comportamientos previamente clasificada, agrupada y saneada a partir de un dataset de
-seguridad más amplio (ver [Procedencia de la taxonomía](#procedencia-de-la-taxonomía)).
-Los scripts no reproducen contenido crudo de ese dataset: cada opción genera una
-plantilla benigna, administrativa o de diagnóstico.
+Las categorías del menú vienen de una taxonomía real de **LOLBins** (binarios legítimos
+del propio sistema operativo, abusables para ejecutar código) y de comportamientos de
+ejecución típicos de campañas de ingeniería social tipo **ClickFix** (páginas falsas de
+verificación/CAPTCHA que inducen a la víctima a pegar y ejecutar un comando), previamente
+clasificada y saneada a partir de un dataset de seguridad más amplio — ver
+[Procedencia de la taxonomía](#procedencia-de-la-taxonomía). Los scripts **no reproducen**
+contenido crudo de ese dataset ni generan cargas maliciosas: cada opción produce una
+plantilla benigna y administrativa equivalente, pensada para quien defiende o audita,
+no para quien ataca.
 
 ## Para qué sirve
 
-- Elegir una categoría de técnica/herramienta y ver en 2-3 frases para qué sirve y qué
-  necesita.
-- Elegir una operación concreta dentro de esa categoría.
-- Responder únicamente las preguntas necesarias (host, puerto, ruta, URL...), con una
-  explicación breve de qué es cada dato y de dónde suele obtenerse.
-- Obtener el comando final, correctamente escapado para el shell de destino
-  (Bash, cmd.exe o PowerShell), y copiado al portapapeles cuando el sistema lo permite.
-- Volver al menú de categorías en cualquier momento, sin quedar atrapado en una pantalla.
+- **Respuesta a incidentes / SOC**: comando de diagnóstico correcto al primer intento
+  (DNS, puerto, hash, cabeceras HTTP...) durante un triage, sin errores de sintaxis.
+- **Pentest / red team con autorización**: sintaxis exacta y ya escapada de LOLBins
+  habituales (msiexec, mshta, rundll32, cscript, PowerShell...) para pruebas de
+  compatibilidad y ejecución en un engagement autorizado.
+- **Detección / threat hunting**: referencia rápida de qué aspecto real tiene cada
+  categoría de comando, útil al escribir o revisar reglas EDR/SIEM contra esas técnicas.
+- **Formación y laboratorio**: `launcher-*` deja explorar la taxonomía completa y
+  comprobar en local, de forma segura, que cada tipo de comportamiento (descarga
+  remota, base64, ofuscación, ejecución oculta) se reconoce sin ejecutar una muestra real.
 
 ## Cómo funciona
 
