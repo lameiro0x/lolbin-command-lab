@@ -3,6 +3,13 @@
 Generador CLI de comandos de administración, diagnóstico y laboratorio en ciberseguridad,
 para Windows y Linux/macOS.
 
+> [!WARNING]
+> **Se recomienda usar la versión Linux (`.sh`)**. Está probada con ejecución real
+> (bash 3.2 y 4/5, navegación completa, casos con espacios/URLs/inyección/EOF). La
+> versión Windows (`.ps1`) sigue la misma lógica pero solo se validó de forma estática
+> — no hubo `pwsh` disponible para probarla en ejecución real — así que está menos
+> curtida. Si usas Windows, revisa el comando generado antes de ejecutarlo.
+
 ## Qué es
 
 Un pequeño conjunto de scripts CLI interactivos que generan, ya listos para copiar y
